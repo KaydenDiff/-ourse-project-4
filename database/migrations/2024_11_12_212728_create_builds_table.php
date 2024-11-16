@@ -14,16 +14,14 @@ return new class extends Migration
         Schema::create('builds', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100);
-            $table->foreignId('character_id');
-            $table->foreignId('user_id')->nullable();
-            $table->timestamps();
-
-            $table->foreign('character_id')->references('id')->on('characters')
+            $table->foreignId('character_id')->constrained('characters')
                 ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')
+            $table->foreignId('user_id')->nullable()->constrained('users')
                 ->onUpdate('cascade')->onDelete('set null');
+            $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

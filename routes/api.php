@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\BuildController;
 use App\Http\Controllers\CharacterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+
 
 use App\Http\Controllers\ItemController;
 
@@ -24,3 +26,8 @@ Route::get('/characters', [CharacterController::class, 'index']);// Получе
 Route::post('/characters/create', [CharacterController::class, 'store']);// Получение списка всех персонажей
 Route::post('/characters/{id}', [CharacterController::class, 'update']); // Редактирование персонажа
 Route::delete('/characters/{id}', [CharacterController::class, 'destroy']); // Удаление персонажа
+Route::middleware('auth:api')->group(function () {
+Route::post('/builds/create', [BuildController::class, 'store']);
+    Route::post('/builds/{id}', [BuildController::class, 'update']);
+Route::delete('/builds/{id}', [BuildController::class, 'destroy']);});
+Route::get('/character/{id}/builds', [BuildController::class, 'getCharacterBuilds']);

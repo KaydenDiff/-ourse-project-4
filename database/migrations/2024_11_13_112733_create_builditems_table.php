@@ -10,21 +10,19 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {Schema::create('builditems', function (Blueprint $table) {
-        $table->id();
-        $table->foreignId('build_id');
-        $table->foreignId('item_id');
-        $table->foreignId('part_id');
-        $table->timestamps();
-
-        $table->foreign('build_id')->references('id')->on('builds')
-            ->onUpdate('cascade')->onDelete('cascade');
-        $table->foreign('item_id')->references('id')->on('items')
-            ->onUpdate('cascade')->onDelete('cascade');
-        $table->foreign('part_id')->references('id')->on('part')
-            ->onUpdate('cascade')->onDelete('cascade');
-    });
+    {
+        Schema::create('builditems', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('build_id')->constrained('builds')
+                ->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('item_id')->constrained('items')
+                ->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('part_id')->constrained('parts')
+                ->onUpdate('cascade')->onDelete('cascade');
+            $table->timestamps();
+        });
     }
+
 
     /**
      * Reverse the migrations.

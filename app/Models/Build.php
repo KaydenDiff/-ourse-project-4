@@ -33,18 +33,13 @@ class Build extends Model
     }
 
     // Связь "многие ко многим" через таблицу builditems
-
-
-    // Связь "многие к одному" для частей сборки через builditems
-    public function parts()
+    public function items()
     {
-        return $this->hasManyThrough(
-            Part::class, // Модель конечной таблицы
-            BuildItem::class, // Модель промежуточной таблицы
-            'build_id', // Внешний ключ в промежуточной таблице, указывающий на текущую модель
-            'id', // Локальный ключ в конечной таблице
-            'id', // Локальный ключ в текущей таблице
-            'part_id' // Внешний ключ в промежуточной таблице, указывающий на конечную таблицу
-        );
+        return $this->belongsToMany(
+            Item::class,       // Модель предметов
+            'builditems',      // Имя промежуточной таблицы
+            'build_id',        // Внешний ключ для сборки в builditems
+            'item_id'          // Внешний ключ для предметов в builditems
+        )->withPivot('part_id'); // Добавить поле part_id из промежуточной таблицы
     }
 }

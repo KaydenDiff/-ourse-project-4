@@ -26,9 +26,9 @@ class BuildItem extends Model
     }
 
     // Связь с Item ("многие к одному")
-    public function items()
+    public function item()
     {
-        return $this->hasMany(Item::class);
+        return $this->belongsTo(Item::class, 'item_id');
     }
 
     // Связь с Part ("многие к одному")
