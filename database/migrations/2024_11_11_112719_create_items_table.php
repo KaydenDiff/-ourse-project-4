@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('required_items', 100)->nullable();
             $table->foreignId('tier_id')->nullable();
             $table->foreignId('type_id')->nullable();
-            $table->string('image', 255);
+            $table->string('image', 255)->nullable();
             $table->timestamps();
 
             $table->foreign('tier_id')->references('id')->on('tier')

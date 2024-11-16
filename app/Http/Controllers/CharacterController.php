@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Item;
+use App\Models\Character;
 use Illuminate\Http\Request;
 use Validator;
 
-class ItemController extends Controller
+class CharacterController extends Controller
 {
     public function index(Request $request)
     {
 
-        $item = Item::all();
+        $character = Character::all();
 
-        return response()->json(['Предметы' => $item], 200);
+        return response()->json(['Персонажи' => $character], 200);
     }
 
-    // Метод для добавления нового предмета
+    // Метод для добавления нового персонажа
     public function store(Request $request)
     {
         // Проверка, авторизован ли пользователь
@@ -32,22 +32,17 @@ class ItemController extends Controller
         // Валидация данных запроса
         $validated = $request->validate([
             'name' => 'required|string|min:3|max:255',
-            'description' => 'required|string|min:6|max:255',
-            'cost' => 'required|integer|min:3|max:9999',
-            'required_item' => 'nullable|integer|exists:items,id',
-            'tier_id' => 'required|integer|exists:tier,id',
-            'type_id' => 'required|integer|exists:type,id',
             'image' => 'nullable|string|max:255',
         ]);
 
-        // Создание нового предмета
-        $item = Item::create($validated);
+        // Создание нового персонажа
+        $character = Character::create($validated);
 
         // Возвращаем успешный ответ
-        return response()->json($item, 201);
+        return response()->json($character, 201);
     }
 
-    // Метод для редактирования предмета
+    // Метод для редактирования персонажа
     public function update(Request $request, $id)
     {
         // Проверка, авторизован ли пользователь
@@ -60,25 +55,20 @@ class ItemController extends Controller
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
-        // Находим предмет по id
-        $item = Item::find($id);
+        // Находим персонажа по id
+        $character = Character::find($id);
 
-        if (!$item) {
-            return response()->json(['error' => 'Предмет не найден'], 404);
+        if (!$character) {
+            return response()->json(['error' => 'Персонаж не найден'], 404);
         }
 
         // Определяем правила валидации
         $rules = [
             'name' => 'string|min:3|max:255',
-            'description' => 'string|min:6|max:255',
-            'cost' => 'integer|min:3|max:9999',
-            'required_item' => 'nullable|integer|exists:items,id',
-            'tier_id' => 'integer|exists:tiers,id',
-            'type_id' => 'integer|exists:types,id',
             'image' => 'nullable|string|max:255',
         ];
 
-        // Валидация данных
+        // Выполняем валидацию
         $validated = $request->validate($rules);
 
         // Проверяем, что хотя бы одно поле передано
@@ -87,13 +77,12 @@ class ItemController extends Controller
         }
 
         // Обновляем только переданные поля
-        $item->update($validated);
+        $character->update($validated);
 
-        // Возвращаем обновлённый предмет
-        return response()->json($item, 200);
+        // Возвращаем обновлённого персонажа
+        return response()->json($character, 200);
     }
-
-    // Метод для удаления предмета
+    // Метод для удаления персонажа
     public function destroy($id)
     {
         // Проверка, авторизован ли пользователь
@@ -107,14 +96,14 @@ class ItemController extends Controller
         }
 
         // Находим предмет по id
-        $item = Item::find($id);
+        $character = Character::find($id);
 
-        if (!$item) {
-            return response()->json(['error' => 'Предмет не найден'], 404);
+        if (!$character) {
+            return response()->json(['error' => 'Персонаж не найден'], 404);
         }
 
         // Удаляем предмет
-        $item->delete();
+        $character->delete();
 
         // Возвращаем успешный ответ
         return response()->json(null, 204);
