@@ -28,6 +28,14 @@ class Item extends Model
     {
         return $this->belongsTo(BuildItem::class);
     }
+    public function part()
+    {
+        return $this->belongsTo(Part::class);
+    }
+    public function tier()
+    {
+        return $this->belongsTo(Tier::class);
+    }
     public function getImageUrlAttribute()
     {
         return $this->image ? asset('storage/' . $this->image) : null;
