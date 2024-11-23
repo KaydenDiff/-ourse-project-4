@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,42 +30,24 @@ class UserController extends Controller
         return response()->json(['Пользователи' => $users], 200, [], JSON_UNESCAPED_UNICODE);
     }
 
-    public function update(Request $request, $id)
+    public function update(UserRequest $request)
     {
-        // Получаем пользователя
-        $user = User::find($id);
+        // Получаем текущего пользователя из токена
+        $user = auth()->user();
 
-        // Проверяем, существует ли пользователь
         if (!$user) {
             return response()->json(['Ошибка' => 'Пользователь не найден'], 404);
         }
 
-        // Проверяем, что пользователь может редактировать себя или быть администратором
-        if (auth()->user()->id !== $user->id && auth()->user()->role_id !== 2) {
-            return response()->json(['Ошибка' => 'Недостаточно прав'], 401);
-        }
+        // Валидация данных
+        $validated = $request->validated();
 
-        // Создаем массив правил валидации
-        $rules = [];
-
-        // Если имя передано в запросе, добавляем его валидацию
-        if ($request->has('name')) {
-            $rules['name'] = 'required|string|max:100';
-        }
-
-        // Если пароль передан, добавляем его валидацию
-        if ($request->has('password')) {
-            $rules['password'] = 'required|string|min:6|confirmed'; // password_confirmation обязательно
-        }
-
-        // Выполняем валидацию
-        $validated = $request->validate($rules);
-
-        // Обновляем данные пользователя
+        // Обновляем имя, если передано
         if (isset($validated['name'])) {
             $user->name = $validated['name'];
         }
 
+        // Обновляем пароль, если передан
         if (isset($validated['password'])) {
             $user->password = Hash::make($validated['password']);
         }
@@ -72,12 +55,9 @@ class UserController extends Controller
         // Сохраняем изменения
         $user->save();
 
-        // Возвращаем успешный ответ
-        return response()->json([
-            'id' => $user->id,
-            'name' => $user->name
-        ], 200);
+        return response()->json(['id' => $user->id, 'name' => $user->name], 200);
     }
+
 
     public function destroy($id)
 {

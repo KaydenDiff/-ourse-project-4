@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ItemRequest;
 use App\Models\Item;
 use Illuminate\Http\Request;
 use Validator;
@@ -19,7 +20,7 @@ class ItemController extends Controller
 
         return response()->json(['Предметы' => $items], 200);
     }
-    public function store(Request $request)
+    public function update(Request $request, $id)
     {
         // Проверка, авторизован ли пользователь
         if (!auth('api')->check()) {
@@ -28,27 +29,63 @@ class ItemController extends Controller
 
         // Проверка, является ли пользователь администратором
         if (auth('api')->user()->role_id !== 2) {
-            return response()->json(['error' => 'Недостаточно прав'], 403);
+            return response()->json(['error' => 'Unauthorized'], 401);
         }
 
-        // Валидация данных запроса
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'nullable|string|min:6|max:255',
-            'cost' => 'required|integer|min:3|max:9999',
+        // Находим предмет по id
+        $item = Item::find($id);
+
+        if (!$item) {
+            return response()->json(['error' => 'Предмет не найден'], 404);
+        }
+
+        // Определяем правила валидации
+        $rules = [
+            'name' => 'string|min:3|max:255',
+            'description' => 'string|min:6|max:255',
+            'cost' => 'integer|min:3|max:9999',
             'required_item' => 'nullable|integer|exists:items,id',
-            'tier_id' => 'required|integer|exists:tier,id',
-            'type_id' => 'required|integer|exists:type,id',
+            'tier_id' => 'integer|exists:tiers,id',
+            'type_id' => 'integer|exists:types,id',
             'image' => 'nullable|file|mimes:jpg,jpeg,png|max:2048',
-        ]);
+        ];
 
-        // Сохранение изображения, если оно было передано
-        $path = null;
+        // Валидация данных
+        $validated = $request->validate($rules);
+
+        // Отфильтровываем пустые поля из validated массива
+        $validated = array_filter($validated);
+
+        // Проверяем, если картинка есть, загружаем её
         if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('items', 'public'); // Сохраняем файл в storage/app/public/items
+            $path = $request->file('image')->store('items', 'public');
+            $validated['image'] = $path;
         }
 
-        // Создание нового предмета
+        // Проверяем, что хотя бы одно поле передано
+        if (empty($validated)) {
+            return response()->json(['error' => 'Нужно указать хотя бы одно поле для обновления'], 422);
+        }
+
+        // Обновляем только переданные поля
+        $item->update($validated);
+
+        // Возвращаем обновлённый предмет с новым путём к картинке, если была обновлена
+        if (isset($validated['image'])) {
+            $item->image_url = asset('storage/' . $validated['image']);
+        }
+
+        return response()->json($item, 200);
+    }
+
+    public function store(ItemRequest $request)
+    {
+        $validated = $request->validated();
+
+        $path = $request->hasFile('image')
+            ? $request->file('image')->store('items', 'public')
+            : null;
+
         $item = Item::create([
             'name' => $validated['name'],
             'description' => $validated['description'],
@@ -56,17 +93,14 @@ class ItemController extends Controller
             'required_items' => $validated['required_item'] ?? null,
             'tier_id' => $validated['tier_id'],
             'type_id' => $validated['type_id'],
-            'image' => $path, // Сохраняем путь относительно публичной директории
+            'image' => $path,
         ]);
 
-        // Формируем URL для изображения, если оно было загружено
-        $item->image_url = $item->image ? asset('storage/items/' . basename($item->image)) : null;
+        $item->image_url = $path ? asset('storage/' . $path) : null;
 
-        // Возвращаем успешный ответ с объектом предмета и URL изображения
-        return response()->json([
-            'item' => $item
-        ], 201);
+        return response()->json($item, 201);
     }
+
 
         // Метод для удаления предмета
     public function destroy($id)

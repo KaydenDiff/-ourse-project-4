@@ -8,12 +8,14 @@ use App\Models\Build;
 use App\Models\Part;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Requests\BuildRequest;
 class BuildController extends Controller
 {
     // Создание сборки
-    public function store(Request $request)
+    public function store(BuildRequest  $request)
     {
+        $validatedData = $request->validated();
+
         // Получаем текущего аутентифицированного пользователя
         $user = auth()->user(); // или auth()->user(), если используете другой способ аутентификации
 
@@ -53,63 +55,57 @@ class BuildController extends Controller
 
     public function getCharacterBuilds($id)
     {
-        // Меняем 'hero' на 'character' для поиска персонажа
         $character = Character::with(['builds.items'])->find($id);
 
         if (!$character) {
             return response()->json(['Ошибка' => 'Персонаж не найден'], 404);
         }
 
-        // Возвращаем сборки с предметами, но без дублирования
         return response()->json([
-            'character' => $character->only(['id', 'name', 'image']), // Убираем лишние поля, чтобы не дублировать
+            'character' => $character->only(['id', 'name', 'image']),
             'builds' => $character->builds->map(function ($build) {
                 return [
                     'id' => $build->id,
                     'name' => $build->name,
                     'items' => $build->items->map(function ($item) {
                         return [
-                            'part' => $item->pivot->part_id, // Получаем part_id из промежуточной таблицы
+                            'part' => $item->pivot->part_id,
                             'item_id' => $item->id,
-                            'item_name' => $item->name, // Подразумевается, что у модели Item есть поле 'name'
+                            'item_name' => $item->name,
                         ];
                     }),
                 ];
             }),
         ], 200);
     }
-
     // Редактирование сборки
-    public function update(Request $request, $id)
+    public function update(BuildRequest $request, $id)
     {
+        $validatedData = $request->validated();
+
         $build = Build::find($id);
 
         if (!$build || $build->user_id != auth()->id()) {
             return response()->json(['Ошибка' => 'Сборка не найдена или доступ запрещён'], 404);
         }
 
-        $validated = $request->validate([
-            'name' => 'nullable|string|min:3|max:255',
-            'items' => 'nullable|array|min:1',
-            'items.*.part' => 'required|string|min:3|max:255',
-            'items.*.item_id' => 'required|integer|exists:items,id',
-        ]);
-
-        if (isset($validated['name'])) {
-            $build->update(['name' => $validated['name']]);
+        // Обновляем только переданные поля
+        if (isset($validatedData['name'])) {
+            $build->name = $validatedData['name'];
         }
 
-        if (isset($validated['items'])) {
-            $build->items()->detach(); // Удаление всех предыдущих предметов
-            foreach ($validated['items'] as $item) {
-                // Добавляем новые предметы
+        // Обновляем список предметов, если они переданы
+        if (isset($validatedData['items'])) {
+            $build->items()->detach();
+            foreach ($validatedData['items'] as $item) {
                 $build->items()->attach($item['item_id'], ['part_id' => $item['part']]);
             }
         }
 
+        $build->save();
+
         return response()->json($build->load('items'), 200);
     }
-
     // Удаление сборки
     public function destroy($id)
     {
