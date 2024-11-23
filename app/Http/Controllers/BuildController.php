@@ -19,7 +19,7 @@ class BuildController extends Controller
 
         // Проверка, что пользователь существует (можно дополнительно обработать ошибку)
         if (!$user) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+            return response()->json(['Ошибка' => 'Недостаточно прав'], 401);
         }
 
         // Создаём сборку, добавляем текущего пользователя
@@ -43,7 +43,7 @@ class BuildController extends Controller
                 ]);
             } else {
                 // Если part не найдено, можно вернуть ошибку или просто пропустить
-                return response()->json(['error' => 'Part not found'], 404);
+                return response()->json(['Ошибка' => 'Этап не найден'], 404);
             }
         }
 
@@ -57,7 +57,7 @@ class BuildController extends Controller
         $character = Character::with(['builds.items'])->find($id);
 
         if (!$character) {
-            return response()->json(['error' => 'Персонаж не найден'], 404);
+            return response()->json(['Ошибка' => 'Персонаж не найден'], 404);
         }
 
         // Возвращаем сборки с предметами, но без дублирования
@@ -85,7 +85,7 @@ class BuildController extends Controller
         $build = Build::find($id);
 
         if (!$build || $build->user_id != auth()->id()) {
-            return response()->json(['error' => 'Сборка не найдена или доступ запрещён'], 404);
+            return response()->json(['Ошибка' => 'Сборка не найдена или доступ запрещён'], 404);
         }
 
         $validated = $request->validate([
@@ -116,7 +116,7 @@ class BuildController extends Controller
         $build = Build::find($id);
 
         if (!$build || $build->user_id != auth()->id()) {
-            return response()->json(['error' => 'Сборка не найдена или доступ запрещён'], 404);
+            return response()->json(['Ошибка' => 'Сборка не найдена или доступ запрещён'], 404);
         }
 
         $build->delete();

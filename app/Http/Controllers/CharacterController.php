@@ -21,24 +21,37 @@ class CharacterController extends Controller
     {
         // Проверка, авторизован ли пользователь
         if (!auth('api')->check()) {
-            return response()->json(['error' => 'Пройдите авторизацию'], 401);
+            return response()->json(['Ошибка' => 'Пройдите авторизацию'], 401);
         }
 
         // Проверка, является ли пользователь администратором
-        if (auth('api')->user()->role_id !== 1) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+        if (auth('api')->user()->role_id !== 2) {
+            return response()->json(['Ошибка' => 'Недостаточно прав'], 401);
         }
 
         // Валидация данных запроса
         $validated = $request->validate([
             'name' => 'required|string|min:3|max:255',
-            'image' => 'nullable|string|max:255',
+            'image' => 'nullable|file|mimes:jpg,jpeg,png|max:2048', // Добавили правило для изображения
         ]);
 
-        // Создание нового персонажа
-        $character = Character::create($validated);
+        // Сохранение изображения, если оно было передано
+        $imagePath = null;
+        if ($request->hasFile('image')) {
+            // Сохраняем изображение в директории 'storage/app/public/characters'
+            $imagePath = $request->file('image')->store('characters', 'public');
+        }
 
-        // Возвращаем успешный ответ
+        // Создание нового персонажа
+        $character = Character::create([
+            'name' => $validated['name'],
+            'image' => $imagePath, // Сохраняем путь к изображению в базе данных
+        ]);
+
+        // Формирование URL изображения для публичного доступа
+        $character->image_url = $imagePath ? asset('storage/' . $imagePath) : null;
+
+        // Возвращаем успешный ответ с данными персонажа
         return response()->json($character, 201);
     }
 
@@ -47,39 +60,54 @@ class CharacterController extends Controller
     {
         // Проверка, авторизован ли пользователь
         if (!auth('api')->check()) {
-            return response()->json(['error' => 'Пройдите авторизацию'], 401);
+            return response()->json(['Ошибка' => 'Пройдите авторизацию'], 401);
         }
 
         // Проверка, является ли пользователь администратором
-        if (auth('api')->user()->role_id !== 1) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+        if (auth('api')->user()->role_id !== 2) {
+            return response()->json(['Ошибка' => 'Недостаточно прав'], 401);
         }
 
         // Находим персонажа по id
         $character = Character::find($id);
 
         if (!$character) {
-            return response()->json(['error' => 'Персонаж не найден'], 404);
+            return response()->json(['Ошибка' => 'Персонаж не найден'], 404);
         }
 
         // Определяем правила валидации
         $rules = [
-            'name' => 'string|min:3|max:255',
-            'image' => 'nullable|string|max:255',
+            'name' => 'nullable|string|min:3|max:255',
+            'image' => 'nullable|file|mimes:jpg,jpeg,png|max:2048', // Обновление для изображения
         ];
 
         // Выполняем валидацию
         $validated = $request->validate($rules);
 
-        // Проверяем, что хотя бы одно поле передано
-        if (empty($validated)) {
-            return response()->json(['error' => 'Нужно указать хотя бы одно поле для обновления'], 422);
+        // Если есть новое изображение, сохраняем его
+        if ($request->hasFile('image')) {
+            // Сохраняем изображение в директории 'storage/app/public/characters'
+            $imagePath = $request->file('image')->store('characters', 'public');
+            $validated['image'] = $imagePath; // Обновляем путь к изображению
         }
 
-        // Обновляем только переданные поля
-        $character->update($validated);
+        // Если передано новое имя, обновляем его
+        if (isset($validated['name'])) {
+            $character->name = $validated['name'];
+        }
 
-        // Возвращаем обновлённого персонажа
+        // Если обновлено изображение, обновляем его путь
+        if (isset($validated['image'])) {
+            $character->image = $validated['image'];
+        }
+
+        // Обновляем персонажа
+        $character->save();
+
+        // Формируем URL изображения
+        $character->image_url = $character->image ? asset('storage/' . $character->image) : null;
+
+        // Возвращаем обновленного персонажа
         return response()->json($character, 200);
     }
     // Метод для удаления персонажа
@@ -87,19 +115,19 @@ class CharacterController extends Controller
     {
         // Проверка, авторизован ли пользователь
         if (!auth('api')->check()) {
-            return response()->json(['error' => 'Пройдите авторизацию'], 401);
+            return response()->json(['Ошибка' => 'Пройдите авторизацию'], 401);
         }
 
         // Проверка, является ли пользователь администратором
-        if (auth('api')->user()->role_id !== 1) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+        if (auth('api')->user()->role_id !== 2) {
+            return response()->json(['Ошибка' => 'Недостаточно прав'], 401);
         }
 
         // Находим предмет по id
         $character = Character::find($id);
 
         if (!$character) {
-            return response()->json(['error' => 'Персонаж не найден'], 404);
+            return response()->json(['Ошибка' => 'Персонаж не найден'], 404);
         }
 
         // Удаляем предмет

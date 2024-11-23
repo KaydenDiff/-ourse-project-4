@@ -14,12 +14,12 @@ class UserController extends Controller
     {
         // Проверка, авторизован ли пользователь
         if (!auth('api')->check()) {
-            return response()->json(['error' => 'Пройдите авторизацию'], 401);
+            return response()->json(['Ошибка' => 'Пройдите авторизацию'], 401);
         }
 
         // Проверка, является ли пользователь администратором
-        if (auth('api')->user()->role_id !== 1) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+        if (auth('api')->user()->role_id !== 2) {
+            return response()->json(['Ошибка' => 'Недостаточно прав'], 401);
         }
 
         // Если пользователь авторизован и является администратором, возвращаем список пользователей
@@ -36,12 +36,12 @@ class UserController extends Controller
 
         // Проверяем, существует ли пользователь
         if (!$user) {
-            return response()->json(['error' => 'User not found'], 404);
+            return response()->json(['Ошибка' => 'Пользователь не найден'], 404);
         }
 
         // Проверяем, что пользователь может редактировать себя или быть администратором
-        if (auth()->user()->id !== $user->id && auth()->user()->role_id !== 1) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+        if (auth()->user()->id !== $user->id && auth()->user()->role_id !== 2) {
+            return response()->json(['Ошибка' => 'Недостаточно прав'], 401);
         }
 
         // Создаем массив правил валидации
@@ -82,15 +82,15 @@ class UserController extends Controller
     public function destroy($id)
 {
     // Проверяем, является ли пользователь администратором
-    if (auth()->user()->role_id !== 1) {
-        return response()->json(['error' => 'Unauthorized'], 401);
+    if (auth()->user()->role_id !== 2) {
+        return response()->json(['Ошибка' => 'Недостаточно прав'], 401);
     }
 
     // Ищем пользователя
     $user = User::find($id);
 
     if (!$user) {
-        return response()->json(['error' => 'User not found'], 404);
+        return response()->json(['Ошибка' => 'Пользователь не найден'], 404);
     }
 
     // Удаляем пользователя

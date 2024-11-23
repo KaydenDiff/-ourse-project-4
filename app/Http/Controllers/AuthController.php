@@ -25,7 +25,7 @@ class AuthController extends Controller
         ]);
 
         // Возвращаем ответ
-        return response()->json(['message' => 'Пользователь успешно создан'], 201);
+        return response()->json(['Сообщение' => 'Пользователь успешно создан'], 201);
     }
 
     // Логин
@@ -54,6 +54,6 @@ class AuthController extends Controller
         $user = $request->user();
         $user->revokeToken();
 
-        return response()->json(['message' => 'Успешный выход'], 200);
+        return response()->json(['Сообщение' => 'Успешный выход'], 200);
     }
 }

@@ -17,8 +17,11 @@ return new class extends Migration
                 ->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('item_id')->constrained('items')
                 ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('part_id')->constrained('parts')
-                ->onUpdate('cascade')->onDelete('cascade');
+
+            // Обратите внимание, что 'parts' должен быть названием таблицы
+            $table->foreignId('part_id')->constrained('part') // Используйте имя таблицы 'part'
+            ->onUpdate('cascade')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
