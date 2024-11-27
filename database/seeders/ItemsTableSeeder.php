@@ -215,8 +215,129 @@ class ItemsTableSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
+                'name' => 'Hunter\'s Aura',
+                'description' => '+150 Здоровье.Сопротивление от пуль: -9%. Уменьшение скорострельности: 10%. Радиус: 15 метров. ',
+                'cost' => 3000,
+                'tier_id' => 3,
+                'type_id' => 1,
+                'image' => 'items/hunters_aura.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+
+            [
+                'name' => 'Intensifying Magazine',
+                'description' => '+20% Урон оружия. +25% Патроны (боезапас).',
+                'cost' => 3000,
+                'tier_id' => 3,
+                'type_id' => 1,
+                'image' => 'items/intensifying_magazine.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Pristine Emblem',
+                'description' => '+35% к скорости пуль.+25% к урону от пуль.+12 единиц к спиритической мощи. +12% к сопротивлению спиритизму',
+                'cost' => 3500,
+                'tier_id' => 3,
+                'type_id' => 1,
+                'image' => 'items/pristine_emblem.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Point Blank',
+                'description' => '+15% Сопротивление от пуль. +1 Выносливость.Урон оружия: +40%. Замедление передвижения: 25%.',
+                'cost' => 3500,
+                'tier_id' => 3,
+                'type_id' => 1,
+                'image' => 'items/point_blank.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Sharpshooter',
+                'description' => '+15% Увеличение диапазона оружия. +35% Увеличение прицела оружия. +175 Прочность щита от пуль. Урон оружия: +70%.',
+                'cost' => 4250,
+                'tier_id' => 3,
+                'type_id' => 1,
+                'image' => 'items/sharpshooter.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Tesla Bullets',
+                'description' => '+14% Скорострельность.Урон электричеством: 30.Урона при отскоке заряда: 60.Шанс срабатывания: 25%.Дальность отскока: 8 метров.Макс. отскоков: 2.',
+                'cost' => 3000,
+                'tier_id' => 3,
+                'type_id' => 1,
+                'image' => 'items/tesla_bullets.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Titanic Magazine',
+                'description' => '+120% к Патронам.+18% Урон оружия.+12% к Сопротивлению спиритическому урону.+25% к Сопротивлению урона от ближнего боя',
+                'cost' => 3500,
+                'tier_id' => 3,
+                'type_id' => 1,
+                'image' => 'items/titanic_magazine.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Toxic Bullets',
+                'description' => 'Урон кровотечения: 5%/сек.Снижение исцеления: -65%.Длительность: 3 секунды.Эффект за выстрел: 0.8%.',
+                'cost' => 3000,
+                'tier_id' => 3,
+                'type_id' => 1,
+                'image' => 'items/toxic_bullets.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Alchemical Fire',
+                'description' => '+225 Здоровье щита от пуль.+14% Урон оружия.+11 Спиритическая сила',
+                'cost' => 3000,
+                'tier_id' => 3,
+                'type_id' => 1,
+                'image' => 'items/alchemical_fire.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Heroic Aura',
+                'description' => '+20% Вампиризм от пуль.+150 Здоровье.+1м/с Скорость передвижения',
+                'cost' => 3000,
+                'tier_id' => 3,
+                'type_id' => 1,
+                'image' => 'items/heroic_aura.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Headhunter',
+                'description' => '+15% к урону от пуль.+150 к прочности щита от пуль.+5% к скорости пуль',
+                'cost' => 3000,
+                'tier_id' => 3,
+                'type_id' => 1,
+                'image' => 'items/headhunter.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Warp Stone',
+                'description' => '+20% Урон оружия.+8 к спиритической мощи.Телепортирует вас вперед, наделяя сопротивлением от пуль.Дальность применения: 11 метров.Сопротивление от пуль: +30%.Длительность эффекта: 5 секунд.',
+                'cost' => 3000,
+                'tier_id' => 3,
+                'type_id' => 1,
+                'image' => 'items/warp_stone.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
                 'name' => 'Crippling Headshot',
-                'description' => 'Inflict additional damage on headshots',
+                'description' => '+20% Урон оружия.+10% Вампиризм от пуль.+10% Вампиризм от спиритизма.Уменьшение сопротивления от пуль: 24%.Уменьшение сопротивления от спиритического урона: 24%.',
                 'cost' => 6200,
                 'tier_id' => 4,  // Tier IV
                 'type_id' => 1,  // Weapon
@@ -225,8 +346,69 @@ class ItemsTableSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
+                'name' => 'Glass Cannon',
+                'description' => '+70% Урон оружия.+10% Скорострельность.+ 1м/с Скорость передвижения.-15% Максимальное здоровье',
+                'cost' => 3500,
+                'tier_id' => 3,
+                'type_id' => 1,
+                'image' => 'items/glass_cannon.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Lucky Shot',
+                'description' => '+30% Патроны.Доп. урон: 90%.Замедление передвижения: 30%.Шанс срабатывания: 35%.',
+                'cost' => 3500,
+                'tier_id' => 3,
+                'type_id' => 1,
+                'image' => 'items/lucky_shot.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Ricochet',
+                'description' => '+35% Патроны.+12% Скорострельность.+150 Здоровье.Урон от рикошета: 60%.Целей рикошета: 2.Дальность рикошета: 14 метров.',
+                'cost' => 3500,
+                'tier_id' => 3,
+                'type_id' => 1,
+                'image' => 'items/ricochet.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Spiritual Overflow',
+                'description' => '+20% Скорострельность.+15% Уменьшение перезарядок способностей.+10% Вампиризм от спиритизма.Доп. спиритическая мощь: +45.Эффект за выстрел: 0.8%.',
+                'cost' => 3500,
+                'tier_id' => 3,
+                'type_id' => 1,
+                'image' => 'items/spiritual_overflow.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Silencer',
+                'description' => '+25% Шанс срабатывания замедления.+20% Урон оружия.Следующие 4с, ваши пули моментально накладывают безмолвие. Безмолвие запрещает цели использовать способности.Эффект: Безмолвие.Длительность эффекта: 2 секунды.',
+                'cost' => 4000,
+                'tier_id' => 4,
+                'type_id' => 1,
+                'image' => 'items/silencer.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Vampiric Burst',
+                'description' => '+2 м/с к Скорости передвижения.+25% к Урону оружия.+175 к Здоровью',
+                'cost' => 4000,
+                'tier_id' => 4,
+                'type_id' => 1,
+                'image' => 'items/vampiric_burst.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+
+            [
                 'name' => 'Frenzy',
-                'description' => 'Increase rate of fire and damage output',
+                'description' => '+12 Патроны.+30% Урон оружия.+200 Здоровье.Когда ваше здоровье опускается ниже 40%, вы получаете прибавку к характеристикам.Скорость передвижения: 4 м/с.Скорострельность: 40%.Сопротивление от пуль: 45. ',
                 'cost' => 6200,
                 'tier_id' => 4,  // Tier IV
                 'type_id' => 1,  // Weapon
@@ -236,7 +418,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Extra Health',
-                'description' => 'Increase health by a fixed amount',
+                'description' => '+160 Здоровье.+5% Урон оружия.',
                 'cost' => 500,
                 'tier_id' => 1,  // Tier I
                 'type_id' => 2,  // Vitality
@@ -246,7 +428,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Extra Regen',
-                'description' => 'Increase health regeneration rate',
+                'description' => '+3 Регенерация здоровья.+10% Патроны',
                 'cost' => 500,
                 'tier_id' => 1,  // Tier I
                 'type_id' => 2,  // Vitality
@@ -256,7 +438,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Bullet Armor',
-                'description' => 'Reduce incoming bullet damage',
+                'description' => '+20% Сопротивление от пуль.+6% Урон оружия',
                 'cost' => 1250,
                 'tier_id' => 4,  // Tier IV
                 'type_id' => 2,  // Vitality
@@ -266,7 +448,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Combat Barrier',
-                'description' => 'Create a shield that absorbs damage',
+                'description' => '+300 Прочность щита от пуль. Урон оружия с щитом: +28%. Скорость передвижения: +8%. ',
                 'cost' => 1250,
                 'tier_id' => 4,  // Tier IV
                 'type_id' => 2,  // Vitality
@@ -276,8 +458,9 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Fortitude',
-                'description' => 'Increase damage resistance over time',
+                'description' => '+365 к Здоровью.Урон оружия: +27%.Скорость передвижения: +2 м/с.',
                 'cost' => 3000,
+                'required_items' => 22,
                 'tier_id' => 4,  // Tier IV
                 'type_id' => 2,  // Vitality
                 'image' => 'items/vitality5.png',  // Обновлено
@@ -286,7 +469,8 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Improved Bullet Armor',
-                'description' => 'Further reduce bullet damage',
+                'description' => '+45% Сопротивление от пуль.+10% Урон оружия.',
+                'required_items' => 24,
                 'cost' => 3000,
                 'tier_id' => 4,  // Tier IV
                 'type_id' => 2,  // Vitality
@@ -296,7 +480,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Inhibitor',
-                'description' => 'Reduce the movement speed of enemies',
+                'description' => '+25% Урон оружия.+175 Здоровье.Замедление передвижения: 25%.Снижение урона: -35%.Длительность эффекта: 2,5 секунды.',
                 'cost' => 7450,
                 'tier_id' => 4,  // Tier IV
                 'type_id' => 2,  // Vitality
@@ -306,7 +490,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Leech',
-                'description' => 'Siphon health from enemies',
+                'description' => '+35% Вампиризм от спиритизма.+35% Вампиризм от пуль.+175 Здоровье.+20% Урон оружия',
                 'cost' => 6200,
                 'tier_id' => 4,  // Tier IV
                 'type_id' => 2,  // Vitality
@@ -360,189 +544,10 @@ class ItemsTableSeeder extends Seeder
 
 
 
-            [
-                'name' => 'Hunter\'s Aura',
-                'description' => 'Охотничья аура',
-                'cost' => 3000,
-                'tier_id' => 3,
-                'type_id' => 1,
-                'image' => 'items/hunters_aura.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Intensifying Magazine',
-                'description' => 'Усиливающий магазин',
-                'cost' => 3000,
-                'tier_id' => 3,
-                'type_id' => 1,
-                'image' => 'items/intensifying_magazine.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Pristine Emblem',
-                'description' => 'Первозданная эмблема',
-                'cost' => 3500,
-                'tier_id' => 3,
-                'type_id' => 1,
-                'image' => 'items/pristine_emblem.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Point Blank',
-                'description' => 'Стрельба в упор',
-                'cost' => 3500,
-                'tier_id' => 3,
-                'type_id' => 1,
-                'image' => 'items/point_blank.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Sharpshooter',
-                'description' => 'Прицельная стрельба',
-                'cost' => 4250,
-                'tier_id' => 3,
-                'type_id' => 1,
-                'image' => 'items/sharpshooter.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Tesla Bullets',
-                'description' => 'Тесла-пули',
-                'cost' => 3000,
-                'tier_id' => 3,
-                'type_id' => 1,
-                'image' => 'items/tesla_bullets.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Titanic Magazine',
-                'description' => 'Титанический магазин',
-                'cost' => 3500,
-                'tier_id' => 3,
-                'type_id' => 1,
-                'image' => 'items/titanic_magazine.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Toxic Bullets',
-                'description' => 'Токсичные пули',
-                'cost' => 3000,
-                'tier_id' => 3,
-                'type_id' => 1,
-                'image' => 'items/toxic_bullets.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Alchemical Fire',
-                'description' => 'Алхимический огонь',
-                'cost' => 3000,
-                'tier_id' => 3,
-                'type_id' => 1,
-                'image' => 'items/alchemical_fire.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Heroic Aura',
-                'description' => 'Героическая аура',
-                'cost' => 3000,
-                'tier_id' => 3,
-                'type_id' => 1,
-                'image' => 'items/heroic_aura.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Headhunter',
-                'description' => 'Охотник за головами',
-                'cost' => 3000,
-                'tier_id' => 3,
-                'type_id' => 1,
-                'image' => 'items/headhunter.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Warp Stone',
-                'description' => 'Камень переноса',
-                'cost' => 3000,
-                'tier_id' => 3,
-                'type_id' => 1,
-                'image' => 'items/warp_stone.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Glass Cannon',
-                'description' => 'Стеклянная пушка',
-                'cost' => 3500,
-                'tier_id' => 3,
-                'type_id' => 1,
-                'image' => 'items/glass_cannon.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Lucky Shot',
-                'description' => 'Удачный выстрел',
-                'cost' => 3500,
-                'tier_id' => 3,
-                'type_id' => 1,
-                'image' => 'items/lucky_shot.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Ricochet',
-                'description' => 'Рикошет',
-                'cost' => 3500,
-                'tier_id' => 3,
-                'type_id' => 1,
-                'image' => 'items/ricochet.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Spiritual Overflow',
-                'description' => 'Спиритическое переполнение',
-                'cost' => 3500,
-                'tier_id' => 3,
-                'type_id' => 1,
-                'image' => 'items/spiritual_overflow.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Silencer',
-                'description' => 'Глушитель',
-                'cost' => 4000,
-                'tier_id' => 4,
-                'type_id' => 1,
-                'image' => 'items/silencer.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'Vampiric Burst',
-                'description' => 'Порыв вампиризма',
-                'cost' => 4000,
-                'tier_id' => 4,
-                'type_id' => 1,
-                'image' => 'items/vampiric_burst.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
+
             [
                 'name' => 'Siphon Bullets',
-                'description' => 'Вытягивающие пули',
+                'description' => '+18% к сопротивлению к пулям.Кража здоровья за пулю: 55.Длительность эффекта: 20 секунд.Частота применения: 0.8 секунд.',
                 'cost' => 6300,
                 'tier_id' => 4,  // Заполнить соответствующим значением
                 'type_id' => 2, // Заполнить соответствующим значением
@@ -552,7 +557,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Enduring Spirit',
-                'description' => 'Спиритическая стойкость',
+                'description' => '+75 Здоровье.+10% Вампиризм от спиритизма.+4 к спиритической силе',
                 'cost' => 500,
                 'tier_id' => 1,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
@@ -562,7 +567,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Extra Stamina',
-                'description' => 'Добавочная выносливость',
+                'description' => '+1 Выносливость.+10% Восстановление выносливости.+6% Скорострельность.+35 к Здоровью',
                 'cost' => 500,
                 'tier_id' => 1,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
@@ -572,7 +577,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Melee Lifesteal',
-                'description' => 'Ударная кража здоровья',
+                'description' => '+13% Урон ближней атаки.+75 Здоровье.Ваша следующая ближняя атака по врагу исцелит вас на 90 hp + 20% от нанесенного урона ближней атакой. Лечение от существ, не являющихся героями, имеет лишь 40% эффективности.',
                 'cost' => 500,
                 'tier_id' => 1,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
@@ -582,7 +587,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Sprint Boots',
-                'description' => 'Беговые ботинки',
+                'description' => '+2 м/с Скорость бега.+1 Регенерация здоровья.+4% Урон оружия',
                 'cost' => 500,
                 'tier_id' => 1,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
@@ -592,7 +597,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Healing Rite',
-                'description' => 'Обряд лечения',
+                'description' => '+45 Здоровье.+3 К спиритической мощности.Суммарное исцеление: 370.Скорость бега: +2 м/с.Длительность исцеления: 17 секунд.Дальность применения: 30 метров.',
                 'cost' => 500,
                 'tier_id' => 1,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
@@ -602,7 +607,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Bullet Lifesteal',
-                'description' => 'Пулевая кража здоровья',
+                'description' => '+28% Вампиризм от пуль.+75 Здоровье',
                 'cost' => 1250,
                 'tier_id' => 2,  // Заполнить соответствующим значением
                 'type_id' => 2, // Заполнить соответствующим значением
@@ -612,7 +617,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Debuff Reducer',
-                'description' => 'Уменьшение эффектов',
+                'description' => '+75 Здоровье.+6% Урон оружия.Сопротивление эффектам: 30%.',
                 'cost' => 1250,
                 'tier_id' => 2,  // Заполнить соответствующим значением
                 'type_id' => 2, // Заполнить соответствующим значением
@@ -622,7 +627,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Enchanter\'s Barrier',
-                'description' => 'Барьер заклинателя',
+                'description' => '+300 Здоровье щита от спиритизма.Доп. мощность к спиритизму с щитом: +20.Сокращение времени перезарядки умений: +8%',
                 'cost' => 1250,
                 'tier_id' => 2,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
@@ -632,7 +637,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Enduring Speed',
-                'description' => 'Скоростная стойкость',
+                'description' => '+1.1 м/с Скорость передвижения.+2 м/с Скорость бега.+75 Здоровье.+1.5 Регенерация здоровья.Сопротивление замедлениям: +30%.',
                 'cost' => 1750,
                 'tier_id' => 3,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
@@ -642,7 +647,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Healbane',
-                'description' => 'Гроза целителей',
+                'description' => '+75 Здоровье. Вы накладываете на жертву снижение исцеления: -40%. Исцеление за убийство: 350.',
                 'cost' => 1250,
                 'tier_id' => 2,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
@@ -652,7 +657,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Healing Booster',
-                'description' => 'Усилитель лечения',
+                'description' => '+6% Сопротивление от спиритизма.+2 Регенерация здоровья. Повышает эффективность вашего лечения на 25%, а также вашу сопротивляемость снижению лечения на 15%.',
                 'cost' => 1250,
                 'tier_id' => 2,  // Заполнить соответствующим значением
                 'type_id' => 2, // Заполнить соответствующим значением
@@ -662,7 +667,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Reactive Barrier',
-                'description' => 'Барьерная реакция',
+                'description' => '+20% Патроны.+75 Здоровье.+2 Регенерация здоровья.Прочность щита от пуль: 400.Прочность щита от спиритизма: 200.Длительность: 9 секунд.',
                 'cost' => 1250,
                 'tier_id' => 2,  // Заполнить соответствующим значением
                 'type_id' => 2, // Заполнить соответствующим значением
@@ -672,7 +677,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Spirit Armor',
-                'description' => 'Спиритическая броня',
+                'description' => '+20% Сопротивление к спиритизму. +5 к спиритической силе',
                 'cost' => 1250,
                 'tier_id' => 3,  // Заполнить соответствующим значением
                 'type_id' => 2,// Заполнить соответствующим значением
@@ -682,7 +687,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Spirit Lifesteal',
-                'description' => 'Спиритическая кража здоровья',
+                'description' => '+23% Вампиризм от спиритизма.+75 Здоровье',
                 'cost' => 1250,
                 'tier_id' => 3,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
@@ -692,7 +697,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Divine Barrier',
-                'description' => 'Божественный барьер',
+                'description' => '+8% к дальности умений.+75 к здоровью.+1м/с к скорости бега.Щит от пуль: 260.Щит от спиритизма: 260.Скорость передвижения: +2 м/с.Длительность: 5 секунды.Дальность применения: 35 метров.',
                 'cost' => 1250,
                 'tier_id' => 3,  // Заполнить соответствующим значением
                 'type_id' => 2, // Заполнить соответствующим значением
@@ -702,8 +707,9 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Health Nova',
-                'description' => 'Вспышка исцеления',
+                'description' => '+10% Урон оружия.+100 Здоровье.+4 к спиритической силе.Суммарное исцеление: 260.Длительность исцеления: 2 секунды.Радиус: 15 метров.',
                 'cost' => 1250,
+                'required_items' => 58,
                 'tier_id' => 3,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
                 'image' => 'items/health_nova.png',
@@ -712,7 +718,9 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Restorative Locket',
-                'description' => 'Живительный медальон',
+                'description' => '+8% сопротивление к спиритизму.+5 спиритическая сила.Исцеления за эффект: 35.
+Максимум ед. эффекта: 15.
+Перезарядка: 30 секунды.',
                 'cost' => 1250,
                 'tier_id' => 3,  // Заполнить соответствующим значением
                 'type_id' => 2, // Заполнить соответствующим значением
@@ -722,7 +730,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Return Fire',
-                'description' => 'Обратный огонь',
+                'description' => '+125 Здоровье.+7 спиритическая сила.+7% Скорострельность.Возвращаемый урон от пуль: 70%.Возвращаемый урон от спиритизма: 30%.Длительность: 7 секунд.Перезарядка: 25 секунды',
                 'cost' => 1250,
                 'tier_id' => 3,  // Заполнить соответствующим значением
                 'type_id' => 2, // Заполнить соответствующим значением
@@ -732,7 +740,8 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Improved Spirit Armor',
-                'description' => 'Улучшенная спиритическая броня',
+                'description' => '+45% сопротивление от спиритизма.+8 спиритическая сила.',
+                'required_items' => 66,
                 'cost' => 4250,
                 'tier_id' => 4,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
@@ -742,7 +751,8 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Lifestrike',
-                'description' => 'Витальный удар',
+                'description' => '+35% Урон ближней атаки.+125 Единиц здоровье.+8% Сопротивление от пуль.60% замедление передвижения.2,5 секунды - длительность замедления',
+                'required_items' => 56,
                 'cost' => 3500,
                 'tier_id' => 4,  // Заполнить соответствующим значением
                 'type_id' => 2, // Заполнить соответствующим значением
@@ -752,7 +762,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Superior Stamina',
-                'description' => 'Превосходная выносливость',
+                'description' => '+3 Выносливость.+25% Восстановление выносливости.+7% Скорострельность.+12% Спиритическая мощь.Увеличивает количество воздушных рывков и прыжков в воздухе, которые могут быть выполнены перед приземлением с 1 до 2.',
                 'cost' => 3500,
                 'tier_id' => 4,  // Заполнить соответствующим значением
                 'type_id' => 2, // Заполнить соответствующим значением
@@ -762,7 +772,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Veil Walker',
-                'description' => 'Незримый покров',
+                'description' => '+250 щит пуль.+200 щит от спиритизма.+12% патроны.+10% урон оружия.Эффект: Невидимость.Скорость передвижения в невидимости: 5 м/с.Длительность невидимости: 5 секунды.Перезарядка: 18 секунд.',
                 'cost' => 3000,
                 'tier_id' => 4,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
@@ -772,7 +782,8 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Debuff Remover',
-                'description' => 'Устранитель эффектов',
+                'description' => '+125 Здоровье.+20% Урон оружия.Скорость передвижения: +3 м/с. Длительность: 3 секунды.Перезарядка: 48 секунд.',
+                'required_items' => 60,
                 'cost' => 4250,
                 'tier_id' => 4,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
@@ -782,7 +793,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Majestic Leap',
-                'description' => 'Грациозный скачок',
+                'description' => '+10 спиритическая сила.+125 здоровья.Вы запускаете себя высоко в воздух. Во время полета, при повторной активации способности, вы начнете падать быстрее. ',
                 'cost' => 3000,
                 'tier_id' => 4,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
@@ -792,7 +803,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Metal Skin',
-                'description' => 'Металлическая кожа',
+                'description' => '+125 здоровье.+8 спиритическая сила.+8% скорострельность.Наделяет вас неуязвимостью к пулям и ближним атакам.Длительность: 3,5 секунды.Перезарядка: 21 секунд.',
                 'cost' => 3000,
                 'tier_id' => 4,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
@@ -802,7 +813,8 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Rescue Beam',
-                'description' => 'Спасательный луч',
+                'description' => '+125 Здоровье.+1 м/c Ускорение.+9 спиритическая сила.Восстановление здоровья: 26%.Время применения: 2,5 секунды,Дальность применения: 32 метра.Перезарядка: 26 секунд.',
+                'required_items' => 58,
                 'cost' => 3000,
                 'tier_id' => 4,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
@@ -812,7 +824,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Soul Rebirth',
-                'description' => 'Перерождение души',
+                'description' => '+12 к спиритической мощи.+20% к урону от оружия.Здоровье при возрождении: 65%.Перезарядка: 240 секунд.',
                 'cost' => 6300,
                 'tier_id' => 4,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
@@ -822,7 +834,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Colossus',
-                'description' => 'Колосс',
+                'description' => '+600 Здоровье.+20% Урон оружия.Сопротивление от пуль: +40%.Сопротивление от спиритизма: +40%.Замедление передвижения: 30%.Радиус: 12 метров.Длительность: 7 секунд.Перезарядка: 45 секунд.',
                 'cost' => 6300,
                 'tier_id' => 4,  // Заполнить соответствующим значением
                 'type_id' => 2, // Заполнить соответствующим значением
@@ -832,7 +844,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Phantom Strike',
-                'description' => 'Фантомный удар',
+                'description' => '+15% к сопротивляемости спиритическому урону.+30% Урон оружия.Длительность замедления и обезоруживания: 3 секунды.Замедление передвижения: 50%.Урон: 150.Дальность применения: 25 метров.Перезарядка: 25 секунд.Телепортирует вас к вражеской цели, накладывая на цель обезоруживание, замедление и нанося урон.',
                 'cost' => 6300,
                 'tier_id' => 4,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
@@ -842,7 +854,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Shadow Weave',
-                'description' => 'Сплетение теней',
+                'description' => '+15 Регенерация здоровья.+300 Здоровье щита от дух. урона.+30% Патроны.Эффект: Невидимость.Длительность Скрытности: 25 секунд.Скорость бега в невидимости: +2 м/с.Радиус обнаружения: 18 метров.Скорострельность от засады: +40%.Спиритическая мощь от засады: +55.Длительность Засады: 8 секунд.Перезарядка: 48 секунд.',
                 'cost' => 6200,
                 'tier_id' => 4,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
@@ -852,7 +864,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Unstoppable',
-                'description' => 'Неудержимость',
+                'description' => '+150 Здоровье.+12 Спиритическая сила.+15 к сопротивлению пулям.Вы получаете сопротивление к спиритизму; развеивает отрицательные эффекты и дает неуязвимость к оглушению, сну, оцепенению, обезоруживанию и привязке.Длительность: 6 секунд.Перезарядка: 60 секунды.',
                 'cost' => 6300,
                 'tier_id' => 4,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
