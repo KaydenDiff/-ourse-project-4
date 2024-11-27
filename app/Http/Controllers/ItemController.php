@@ -101,7 +101,6 @@ class ItemController extends Controller
         return response()->json($item, 201);
     }
 
-
         // Метод для удаления предмета
     public function destroy($id)
     {

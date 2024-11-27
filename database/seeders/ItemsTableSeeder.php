@@ -16,7 +16,7 @@ class ItemsTableSeeder extends Seeder
         DB::table('items')->insert([
             [
                 'name' => 'Basic Magazine',
-                'description' => '+26% Ammo +15% Weapon Damage',
+                'description' => '+26% Патроны +15% Урон от пуль',
                 'cost' => 500,
                 'tier_id' => 1,  // Tier I
                 'type_id' => 1,  // Weapon
@@ -26,7 +26,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'High-Velocity Mag',
-                'description' => 'High velocity increases weapon damage',
+                'description' => '+20% к скорости пуль +13% к урону от пуль +65 к прочности щита от пуль',
                 'cost' => 500,
                 'tier_id' => 1,  // Tier I
                 'type_id' => 1,  // Weapon
@@ -36,7 +36,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Close Quarters',
-                'description' => 'Ближняя дистанция',
+                'description' => '+5% к сопротивлению пулям. Урон оружия: +25%. Расстояние: 15 метров.',
                 'cost' => 500,
                 'tier_id' => 1,  // Заполнить соответствующим значением
                 'type_id' => 1,  // Заполнить соответствующим значением
@@ -46,7 +46,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Headshot Booster',
-                'description' => 'Усилитель выстрелов в голову',
+                'description' => '+4% Скорострельность. +40 Прочности щита от пуль. +40 к урону в голову',
                 'cost' => 500,
                 'tier_id' => 1,
                 'type_id' => 1,
@@ -56,7 +56,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Hollow Point Ward',
-                'description' => 'Разрывная оборона',
+                'description' => '+95 к прочности щита от дух. урона (спиритизма). +4 Дух. сила (спиритической мощи). Урон оружия: +22%. ',
                 'cost' => 500,
                 'tier_id' => 1,
                 'type_id' => 1,
@@ -66,7 +66,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Monster Rounds',
-                'description' => 'Чудовищные патроны',
+                'description' => '+30% Урон оружия по крипам. +25% Сопротивление от пуль (ото всех, кроме героев). +30 К здоровью. +1 Регенерация здоровья.',
                 'cost' => 500,
                 'tier_id' => 1,
                 'type_id' => 1,
@@ -76,7 +76,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Rapid Rounds',
-                'description' => 'Спешная стрельба',
+                'description' => '+11% Скорострельность. +1 м/с Скорость бега',
                 'cost' => 500,
                 'tier_id' => 1,
                 'type_id' => 1,
@@ -86,7 +86,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Restorative Shot',
-                'description' => 'Живительный выстрел',
+                'description' => '+100 к прочности щита от пуль. +6% Урон оружия.',
                 'cost' => 500,
                 'tier_id' => 1,
                 'type_id' => 1,
@@ -96,7 +96,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Active Reload',
-                'description' => 'Increase reload speed and damage for a short time',
+                'description' => '+10% Урон оружия. -20% Время перезарядки. Скорострельность: +20%. Вампиризм от пуль: +20%.',
                 'cost' => 1250,
                 'tier_id' => 2,  // Tier II
                 'type_id' => 1,  // Weapon
@@ -106,7 +106,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Berserker',
-                'description' => 'Increase damage while taking damage',
+                'description' => '+4 Патроны. +7% Сопротивление от пуль.',
                 'cost' => 1250,
                 'tier_id' => 2,  // Tier II
                 'type_id' => 1,  // Weapon
@@ -116,7 +116,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Kinetic Dash',
-                'description' => 'Кинетический рывок',
+                'description' => '+100 Здоровье. +1.5 Восстановление здоровья. Скорострельность: +30%. Временные патроны: +5.',
                 'cost' => 1250,
                 'tier_id' => 2,
                 'type_id' => 1,
@@ -126,7 +126,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Long Range',
-                'description' => 'Дальняя дистанция',
+                'description' => '+90 к прочности щита от пуль. Урон оружия: +40%. Расстояние: 15 метров.',
                 'cost' => 1250,
                 'tier_id' => 2,
                 'type_id' => 1,
@@ -136,7 +136,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Melee Charge',
-                'description' => 'Удар с зарядом',
+                'description' => '+12% Урон оружия. +75 Здоровье.',
                 'cost' => 1250,
                 'tier_id' => 2,
                 'type_id' => 1,
@@ -146,7 +146,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Mystic Shot',
-                'description' => 'Мистический выстрел',
+                'description' => '+12% Урон оружия. +4 Спиритическая сила',
                 'cost' => 1250,
                 'tier_id' => 2,
                 'type_id' => 1,
@@ -156,7 +156,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Slowing Bullets',
-                'description' => 'Замедляющие пули',
+                'description' => '+16% Урон оружия. +5 Спиритическая сила',
                 'cost' => 1250,
                 'tier_id' => 2,
                 'type_id' => 1,
@@ -166,7 +166,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Soul Shredder Bullets',
-                'description' => 'Душегубные пули',
+                'description' => '+7% Урон оружия.',
                 'cost' => 1250,
                 'tier_id' => 2,
                 'type_id' => 1,
@@ -176,7 +176,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Swift Striker',
-                'description' => 'Быстрый стрелок',
+                'description' => '+22% Скорострельность. +10% К боезапасу. -5% Сопротивление от пуль.',
                 'cost' => 1250,
                 'tier_id' => 2,
                 'type_id' => 1,
@@ -185,8 +185,18 @@ class ItemsTableSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
+                'name' => 'Fleetfoot',
+                'description' => '+90 Здоровье. +25% Дальность подката',
+                'cost' => 1250,
+                'tier_id' => 2,
+                'type_id' => 1,
+                'image' => 'items/fleetfoot.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
                 'name' => 'Burst Fire',
-                'description' => 'Fire a burst of rapid shots',
+                'description' => '+12% Скорострельность. +50% Дальность подката. +70 к Здоровью. +20% к сопротивлению замедлению',
                 'cost' => 3000,
                 'tier_id' => 3,  // Tier III
                 'type_id' => 1,  // Weapon
@@ -196,7 +206,7 @@ class ItemsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Escalating Resilience',
-                'description' => 'Increase resistance to damage over time',
+                'description' => '+14% Скорострельность. +14% Урон оружия.',
                 'cost' => 3000,
                 'tier_id' => 3,  // Tier III
                 'type_id' => 1,  // Weapon
@@ -349,16 +359,7 @@ class ItemsTableSeeder extends Seeder
 
 
 
-            [
-                'name' => 'Fleetfoot',
-                'description' => 'Проворная поступь',
-                'cost' => 1250,
-                'tier_id' => 2,
-                'type_id' => 1,
-                'image' => 'items/fleetfoot.png',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
+
             [
                 'name' => 'Hunter\'s Aura',
                 'description' => 'Охотничья аура',
