@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Exceptions\ApiException;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CharacterRequest extends ApiRequest
@@ -13,7 +14,10 @@ class CharacterRequest extends ApiRequest
     {
         return auth('api')->check() && auth('api')->user()->role_id === 2;
     }
-
+    public function failedAuthorization()
+    {
+        throw new ApiException('Недостаточно прав', 403);
+    }
     /**
      * Get the validation rules that apply to the request.
      *

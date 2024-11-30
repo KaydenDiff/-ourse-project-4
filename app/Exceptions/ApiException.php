@@ -12,8 +12,6 @@ class ApiException extends HttpResponseException
     {
         $response = [
             'message' => $message,
-            'code' => $code,
-            'timestamp' => now(), // Добавить временную метку
         ];
 
         if (!empty($errors)) {

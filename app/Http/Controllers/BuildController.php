@@ -109,14 +109,19 @@ class BuildController extends Controller
     // Удаление сборки
     public function destroy($id)
     {
+        // Находим сборку по ID
         $build = Build::find($id);
 
+        // Если сборка не найдена или пользователь не имеет прав на её удаление
         if (!$build || $build->user_id != auth()->id()) {
             return response()->json(['Ошибка' => 'Сборка не найдена или доступ запрещён'], 404);
         }
 
+        // Удаление сборки
         $build->delete();
 
-        return response()->json(null, 204);
+        // Возвращаем успешный ответ
+        return response()->json(['Сообщение' => 'Сборка успешно удалена'], 200);
     }
+
 }
