@@ -14,6 +14,7 @@ class CharactersTableSeeder extends Seeder
      */
     public function run()
     {
+
         DB::table('characters')->insert([
             ['name' => 'Abrams', 'image' => 'characters/abrams.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
             ['name' => 'Bebop', 'image' => 'characters/bebop.png', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
