@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+
 use Exception;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
@@ -12,10 +13,14 @@ class ApiException extends HttpResponseException
         $response = [
             'message' => $message,
             'code' => $code,
+            'timestamp' => now(), // Добавить временную метку
         ];
-        if(!empty($errors)){
+
+        if (!empty($errors)) {
             $response['errors'] = $errors;
         }
+
         parent::__construct(response()->json($response)->setStatusCode($code));
     }
+
 }

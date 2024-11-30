@@ -17,10 +17,12 @@ class CharacterRequest extends ApiRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return \Illuminate\Http\JsonResponse
      */
+
     public function rules()
     {
+
         // Разные правила для методов store и update
         $rules = [
             'name' => 'required|string|min:3|max:255',

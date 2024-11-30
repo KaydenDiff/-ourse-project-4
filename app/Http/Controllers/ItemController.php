@@ -29,7 +29,7 @@ class ItemController extends Controller
 
         // Проверка, является ли пользователь администратором
         if (auth('api')->user()->role_id !== 2) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+            return response()->json(['error' => 'Доступ запрещён'], 403);
         }
 
         // Находим предмет по id

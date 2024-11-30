@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name', 255);
             $table->text('description')->nullable();
             $table->integer('cost');
-            $table->string('required_items', 100)->nullable();
+            $table->integer('required_items')->nullable();
             $table->foreignId('tier_id')->nullable();
             $table->foreignId('type_id')->nullable();
             $table->string('image', 255)->nullable();

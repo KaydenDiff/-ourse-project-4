@@ -17,6 +17,7 @@ class CharacterController extends Controller
     }
     public function store(CharacterRequest $request)
     {
+
         $validated = $request->validated();
 
         $imagePath = $request->hasFile('image')
