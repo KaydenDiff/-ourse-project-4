@@ -448,7 +448,7 @@ class ItemsTableSeeder extends Seeder
                 'description' => '+70% Урон оружия.+10% Скорострельность.+ 1м/с Скорость передвижения.-12% Максимальное здоровье +25% К замедлению от выстрелов',
                 'cost' => 7450,
                 'required_items' => null,
-                'tier_id' => 3,
+                'tier_id' => 4,
                 'type_id' => 1,
 
                 'image' => 'items/glass_canon.png',
@@ -459,9 +459,9 @@ class ItemsTableSeeder extends Seeder
 
                 'name' => 'Lucky Shot',
                 'description' => '+30% Патроны.Доп. урон: 90%.Замедление передвижения: 30%.Шанс срабатывания: 35%.',
-                'cost' => 3500,
+                'cost' => 6200,
                 'required_items' => null,
-                'tier_id' => 3,
+                'tier_id' => 4,
                 'type_id' => 1,
 
                 'image' => 'items/lucky_shot.png',
@@ -472,9 +472,9 @@ class ItemsTableSeeder extends Seeder
 
                 'name' => 'Ricochet',
                 'description' => '+35% Патроны.+12% Скорострельность.+150 Здоровье.Урон от рикошета: 60%.Целей рикошета: 2.Дальность рикошета: 14 метров.',
-                'cost' => 3500,
+                'cost' => 6200,
                  'required_items' => null,
-                'tier_id' => 3,
+                'tier_id' => 4,
                 'type_id' => 1,
                 'image' => 'items/ricochet.png',
                 'created_at' => Carbon::now(),
@@ -484,9 +484,9 @@ class ItemsTableSeeder extends Seeder
 
                 'name' => 'Spiritual Overflow',
                 'description' => '+20% Скорострельность.+15% Уменьшение перезарядок способностей.+10% Вампиризм от спиритизма.Доп. спиритическая мощь: +45.Эффект за выстрел: 0.8%.',
-                'cost' => 3500,
+                'cost' => 6200,
                  'required_items' => null,
-                'tier_id' => 3,
+                'tier_id' => 4,
                 'type_id' => 1,
                 'image' => 'items/spiritual_overflow.png',
                 'created_at' => Carbon::now(),
@@ -496,7 +496,7 @@ class ItemsTableSeeder extends Seeder
 
                 'name' => 'Silencer',
                 'description' => '+25% Шанс срабатывания замедления.+20% Урон оружия.Следующие 4с, ваши пули моментально накладывают безмолвие. Безмолвие запрещает цели использовать способности.Эффект: Безмолвие.Длительность эффекта: 2 секунды.',
-                'cost' => 4000,
+                'cost' => 6200,
                 'required_items' => null,
                 'tier_id' => 4,
                 'type_id' => 1,
@@ -509,7 +509,7 @@ class ItemsTableSeeder extends Seeder
 
                 'name' => 'Vampiric Burst',
                 'description' => '+2 м/с к Скорости передвижения.+25% к Урону оружия.+175 к Здоровью',
-                'cost' => 4000,
+                'cost' => 6200,
                 'required_items' => null,
                 'tier_id' => 4,
 
@@ -561,7 +561,7 @@ class ItemsTableSeeder extends Seeder
                 'description' => '+20% Сопротивление от пуль.+6% Урон оружия',
                 'cost' => 1250,
                  'required_items' => null,
-                'tier_id' => 4,  // Tier IV
+                'tier_id' => 2,  // Tier IV
                 'type_id' => 2,  // Vitality
                 'image' => 'items/vitality1.png',  // Обновлено
                 'created_at' => Carbon::now(),
@@ -573,7 +573,7 @@ class ItemsTableSeeder extends Seeder
                 'description' => '+300 Прочность щита от пуль. Урон оружия с щитом: +28%. Скорость передвижения: +8%. ',
                 'cost' => 1250,
                  'required_items' => null,
-                'tier_id' => 4,  // Tier IV
+                'tier_id' => 2,  // Tier IV
                 'type_id' => 2,  // Vitality
                 'image' => 'items/vitality10.png',  // Обновлено
                 'created_at' => Carbon::now(),
@@ -585,7 +585,7 @@ class ItemsTableSeeder extends Seeder
                 'description' => '+365 к Здоровью.Урон оружия: +27%.Скорость передвижения: +2 м/с.',
                 'cost' => 3000,
                 'required_items' => 22,
-                'tier_id' => 4,  // Tier IV
+                'tier_id' => 3,  // Tier IV
                 'type_id' => 2,  // Vitality
                 'image' => 'items/vitality5.png',  // Обновлено
                 'created_at' => Carbon::now(),
@@ -598,7 +598,7 @@ class ItemsTableSeeder extends Seeder
 
                 'cost' => 3000,
                 'required_items' => 24,
-                'tier_id' => 4,  // Tier IV
+                'tier_id' => 3,  // Tier IV
                 'type_id' => 2,  // Vitality
                 'image' => 'items/vitality4.png',  // Обновлено
                 'created_at' => Carbon::now(),
@@ -794,7 +794,7 @@ class ItemsTableSeeder extends Seeder
                 'description' => '+1.1 м/с Скорость передвижения.+2 м/с Скорость бега.+75 Здоровье.+1.5 Регенерация здоровья.Сопротивление замедлениям: +30%.',
                 'cost' => 1750,
                  'required_items' => null,
-                'tier_id' => 3,  // Заполнить соответствующим значением
+                'tier_id' => 2,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
                 'image' => 'items/enduring_speed.png',
                 'created_at' => Carbon::now(),
@@ -838,7 +838,7 @@ class ItemsTableSeeder extends Seeder
                 'description' => '+20% Сопротивление к спиритизму. +5 к спиритической силе',
                 'cost' => 1250,
                  'required_items' => null,
-                'tier_id' => 3,  // Заполнить соответствующим значением
+                'tier_id' => 2,  // Заполнить соответствующим значением
                 'type_id' => 2,// Заполнить соответствующим значением
                 'image' => 'items/spirit_armor.png',
                 'created_at' => Carbon::now(),
@@ -849,7 +849,7 @@ class ItemsTableSeeder extends Seeder
                 'description' => '+23% Вампиризм от спиритизма.+75 Здоровье',
                 'cost' => 1250,
                  'required_items' => null,
-                'tier_id' => 3,  // Заполнить соответствующим значением
+                'tier_id' => 2,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
                 'image' => 'items/spirit_lifesteal.png',
                 'created_at' => Carbon::now(),
@@ -860,7 +860,7 @@ class ItemsTableSeeder extends Seeder
                 'description' => '+8% к дальности умений.+75 к здоровью.+1м/с к скорости бега.Щит от пуль: 260.Щит от спиритизма: 260.Скорость передвижения: +2 м/с.Длительность: 5 секунды.Дальность применения: 35 метров.',
                 'cost' => 1250,
                  'required_items' => null,
-                'tier_id' => 3,  // Заполнить соответствующим значением
+                'tier_id' => 2,  // Заполнить соответствующим значением
                 'type_id' => 2, // Заполнить соответствующим значением
                 'image' => 'items/divine_barrier.png',
                 'created_at' => Carbon::now(),
@@ -872,7 +872,7 @@ class ItemsTableSeeder extends Seeder
                 'cost' => 1250,
 
                 'required_items' => 58,
-                'tier_id' => 3,  // Заполнить соответствующим значением
+                'tier_id' => 2,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
                 'image' => 'items/health_nova.png',
                 'created_at' => Carbon::now(),
@@ -884,7 +884,7 @@ class ItemsTableSeeder extends Seeder
                 'description' => '+8% сопротивление к спиритизму.+5 спиритическая сила.Исцеления за эффект: 35. Максимум ед. эффекта: 15 Перезарядка: 30 секунды.',
                 'cost' => 1250,
                 'required_items' => null,
-                'tier_id' => 3,  // Заполнить соответствующим значением
+                'tier_id' => 2,  // Заполнить соответствующим значением
                 'type_id' => 2, // Заполнить соответствующим значением
                 'image' => 'items/restorative_locket.png',
                 'created_at' => Carbon::now(),
@@ -895,7 +895,7 @@ class ItemsTableSeeder extends Seeder
                 'description' => '+125 Здоровье.+7 спиритическая сила.+7% Скорострельность.Возвращаемый урон от пуль: 70%.Возвращаемый урон от спиритизма: 30%.Длительность: 7 секунд.Перезарядка: 25 секунды',
                 'cost' => 1250,
                 'required_items' => null,
-                'tier_id' => 3,  // Заполнить соответствующим значением
+                'tier_id' => 2,  // Заполнить соответствующим значением
                 'type_id' => 2, // Заполнить соответствующим значением
                 'image' => 'items/return_fire.png',
                 'created_at' => Carbon::now(),
@@ -908,7 +908,7 @@ class ItemsTableSeeder extends Seeder
 
                 'cost' => 4250,
                 'required_items' => 66,
-                'tier_id' => 4,  // Заполнить соответствующим значением
+                'tier_id' => 3,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
                 'image' => 'items/improved_spirit_armor.png',
                 'created_at' => Carbon::now(),
@@ -920,7 +920,7 @@ class ItemsTableSeeder extends Seeder
 
                 'cost' => 3500,
                 'required_items' => 56,
-                'tier_id' => 4,  // Заполнить соответствующим значением
+                'tier_id' => 3,  // Заполнить соответствующим значением
                 'type_id' => 2, // Заполнить соответствующим значением
                 'image' => 'items/lifestrike.png',
                 'created_at' => Carbon::now(),
@@ -931,7 +931,7 @@ class ItemsTableSeeder extends Seeder
                 'description' => '+3 Выносливость.+25% Восстановление выносливости.+7% Скорострельность.+12% Спиритическая мощь.Увеличивает количество воздушных рывков и прыжков в воздухе, которые могут быть выполнены перед приземлением с 1 до 2.',
                 'cost' => 3500,
                  'required_items' => null,
-                'tier_id' => 4,  // Заполнить соответствующим значением
+                'tier_id' => 3,  // Заполнить соответствующим значением
                 'type_id' => 2, // Заполнить соответствующим значением
                 'image' => 'items/superior_stamina.png',
                 'created_at' => Carbon::now(),
@@ -942,7 +942,7 @@ class ItemsTableSeeder extends Seeder
                 'description' => '+250 щит пуль.+200 щит от спиритизма.+12% патроны.+10% урон оружия.Эффект: Невидимость.Скорость передвижения в невидимости: 5 м/с.Длительность невидимости: 5 секунды.Перезарядка: 18 секунд.',
                 'cost' => 3000,
                  'required_items' => null,
-                'tier_id' => 4,  // Заполнить соответствующим значением
+                'tier_id' => 3,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
                 'image' => 'items/veil_walker.png',
                 'created_at' => Carbon::now(),
@@ -954,7 +954,7 @@ class ItemsTableSeeder extends Seeder
 
                 'cost' => 4250,
                 'required_items' => 60,
-                'tier_id' => 4,  // Заполнить соответствующим значением
+                'tier_id' => 3,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
                 'image' => 'items/debuff_remover.png',
                 'created_at' => Carbon::now(),
@@ -965,7 +965,7 @@ class ItemsTableSeeder extends Seeder
                 'description' => '+10 спиритическая сила.+125 здоровья.Вы запускаете себя высоко в воздух. Во время полета, при повторной активации способности, вы начнете падать быстрее. ',
                 'cost' => 3000,
                  'required_items' => null,
-                'tier_id' => 4,  // Заполнить соответствующим значением
+                'tier_id' => 3,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
                 'image' => 'items/majestic_leap.png',
                 'created_at' => Carbon::now(),
@@ -976,7 +976,7 @@ class ItemsTableSeeder extends Seeder
                 'description' => '+125 здоровье.+8 спиритическая сила.+8% скорострельность.Наделяет вас неуязвимостью к пулям и ближним атакам.Длительность: 3,5 секунды.Перезарядка: 21 секунд.',
                 'cost' => 3000,
                  'required_items' => null,
-                'tier_id' => 4,  // Заполнить соответствующим значением
+                'tier_id' => 3,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
                 'image' => 'items/metal_skin.png',
                 'created_at' => Carbon::now(),
@@ -988,7 +988,7 @@ class ItemsTableSeeder extends Seeder
 
                 'cost' => 3000,
                 'required_items' => 58,
-                'tier_id' => 4,  // Заполнить соответствующим значением
+                'tier_id' => 3,  // Заполнить соответствующим значением
                 'type_id' => 2,  // Заполнить соответствующим значением
                 'image' => 'items/rescue_beam.png',
                 'created_at' => Carbon::now(),
@@ -1243,7 +1243,7 @@ class ItemsTableSeeder extends Seeder
 
                 'cost' => 4250,
                 'required_items'=>93,
-                'tier_id' => 4,
+                'tier_id' => 3,
                 'type_id' => 3,
                 'image' => 'items/mystic_slow.png',
                 'created_at' => Carbon::now(),
@@ -1267,7 +1267,7 @@ class ItemsTableSeeder extends Seeder
 
                 'cost' => 4250,
                 'required_items'=>90,
-                'tier_id' => 4,
+                'tier_id' => 3,
                 'type_id' => 3,
                 'image' => 'items/superior_cooldown.png',
                 'created_at' => Carbon::now(),
@@ -1279,7 +1279,7 @@ class ItemsTableSeeder extends Seeder
 
                 'cost' => 4250,
                 'required_item'=>33,
-                'tier_id' => 4,
+                'tier_id' => 3,
                 'type_id' => 3,
                 'image' => 'items/superior_duration.png',
                 'created_at' => Carbon::now(),
@@ -1344,9 +1344,9 @@ class ItemsTableSeeder extends Seeder
                 'name' => 'Boundless Spirit',
                 'description' => '+65 спиритической мощи. +300 Здоровье. +15 Регенерация здоровья. +30 к урону от пуль. +2 м/с Скорость бега.',
 
-                'cost' => 3000,
+                'cost' => 9300,
                 'required_items'=>100,
-                'tier_id' => 3,
+                'tier_id' => 4,
                 'type_id' => 3,
                 'image' => 'items/boundless_spirit.png',
                 'created_at' => Carbon::now(),
@@ -1355,9 +1355,9 @@ class ItemsTableSeeder extends Seeder
             [
                 'name' => 'Diviner\'s Kevlar',
                 'description' => '+20% Вампиризм от дух. урона.+12% Уменьшение перезарядок способностей.Применив ультимативное умение герой на время получает щиты от пуль и спиритизма, а также бонус к спиритической мощи. Щит от пуль: 700. Щит от спиритического урона: 700. Спиритическая мощь: +40. Длительность: 15 секунд. Перезарядка: 64 секунды.',
-                'cost' => 3000,
+                'cost' => 6200,
                  'required_items' => null,
-                'tier_id' => 3,
+                'tier_id' => 4,
                 'type_id' => 3,
                 'image' => 'items/diviners_kevlar.png',
                 'created_at' => Carbon::now(),
@@ -1366,9 +1366,9 @@ class ItemsTableSeeder extends Seeder
             [
                 'name' => 'Magic Carpet',
                 'description' => '+10% к длительности умений. +15% к спиритической мощи. +150 единиц к здоровью.Призывает ковёр-самолет, который уносит вас прочь и даёт вам щиты от пуль и спиритизма. Во время призыва нельзя использовать умения. Вам даётся невосприимчивость к замедлениям на время полета, но любое ваше действие его прервёт. +400 к прочности щита от пуль. +400 к прочности щита от спиритизма',
-                'cost' => 3000,
+                'cost' => 6200,
                  'required_items' => null,
-                'tier_id' => 3,
+                'tier_id' => 4,
                 'type_id' => 3,
                 'image' => 'items/carpet.png',
                 'created_at' => Carbon::now(),
@@ -1378,9 +1378,9 @@ class ItemsTableSeeder extends Seeder
                 'name' => 'Escalating Exposure',
                 'description' => '+15% Сопротивление от дух. урона. +125 Здоровье. -12% Сопротивление от дух. урона врагов.Нанося врагу спиритический урон, вы накладываете на него суммирующийся эффект, усиливающий спиритический урон, который вы наносите цели. Дух. урон за заряд: +4%.Длительность: 15 секунд.Макс. частота применения за цель: 0,7 секунд.',
 
-                'cost' => 3000,
+                'cost' => 6200,
                 'required_items'=>91,
-                'tier_id' => 3,
+                'tier_id' => 4,
                 'type_id' => 3,
                 'image' => 'items/escalating_exposure.png',
                 'created_at' => Carbon::now(),
@@ -1389,9 +1389,9 @@ class ItemsTableSeeder extends Seeder
             [
                 'name' => 'Mystic Reverb',
                 'description' => '+14% Вампиризм от дух. урона.+14% Сопротивление от дух. урона.Усиливает выбранное умение: оно накладывает замедление на цель и наносит урон.Урон: 40%.Замедление передвижения: 40%.Радиус: 18,4 метров.Задержка 3 секунды.Перезарядка: 6,2 секунды.',
-                'cost' => 3000,
+                'cost' => 6200,
                 'required_items' => null,
-                'tier_id' => 3,
+                'tier_id' => 4,
 
                 'type_id' => 3,
                 'image' => 'items/mystic_reverb.png',
@@ -1401,9 +1401,9 @@ class ItemsTableSeeder extends Seeder
             [
                 'name' => 'Curse',
                 'description' => '+20% Урон оружия. +8 Дух. сила.Проклинает врага: прерывает его действия, запрещает ему применять предметы, а также накладывает на него безмолвие и обезоруживание.Эффект: ЗаглушениеДлительность: 3.25 секунды.Дальность применения: 20 метров.Перезарядка: 53 секунд.',
-                'cost' => 3000,
+                'cost' => 6200,
                 'required_items' => null,
-                'tier_id' => 3,
+                'tier_id' => 4,
                 'type_id' => 3,
 
                 'image' => 'items/curse.png',
@@ -1413,9 +1413,9 @@ class ItemsTableSeeder extends Seeder
             [
                 'name' => 'Echo Shard',
                 'description' => '+1 м/с Скорость передвижения. +16% Сопротивление от пуль. +12% к спиритической мощи.Обновляет перезарядку вашей последней использованной не ультимативной способности.. Перезарядка: 21 секунда.',
-                'cost' => 3000,
+                'cost' => 6200,
                 'required_items' => null,
-                'tier_id' => 3,
+                'tier_id' => 4,
                 'type_id' => 3,
 
                 'image' => 'items/echo_shard.png',
@@ -1425,9 +1425,9 @@ class ItemsTableSeeder extends Seeder
             [
                 'name' => 'Refresher',
                 'description' => '+16% Сопротивление спиритизму. +8% к сопротивлению пулям.Обновляет перезарядку всех ваших способностей и восстанавливает все ваши заряды.. Перезарядка: 212 секунд.',
-                'cost' => 3000,
+                'cost' => 6200,
                 'required_items' => null,
-                'tier_id' => 3,
+                'tier_id' => 4,
 
                 'type_id' => 3,
                 'image' => 'items/refresher.png',
