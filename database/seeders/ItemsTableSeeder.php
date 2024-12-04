@@ -99,7 +99,7 @@ class ItemsTableSeeder extends Seeder
                 'required_items' => null,
                 'tier_id' => 1,
                 'type_id' => 1,
-                'image' => 'items/rapid_rounds.png',
+                'image' => 'items/rapidrounds.png',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
@@ -204,7 +204,7 @@ class ItemsTableSeeder extends Seeder
                 'required_items' => null,
                 'tier_id' => 2,
                 'type_id' => 1,
-                'image' => 'items/slow_bullets.png',
+                'image' => 'items/slowing_bullets.png',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
@@ -412,7 +412,7 @@ class ItemsTableSeeder extends Seeder
                  'required_items' => null,
                 'tier_id' => 3,
                 'type_id' => 1,
-                'image' => 'items/headhunter.png',
+                'image' => 'items/head_hunter.png',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
@@ -445,13 +445,13 @@ class ItemsTableSeeder extends Seeder
             [
 
                 'name' => 'Glass Cannon',
-                'description' => '+70% Урон оружия.+10% Скорострельность.+ 1м/с Скорость передвижения.-15% Максимальное здоровье',
-                'cost' => 3500,
+                'description' => '+70% Урон оружия.+10% Скорострельность.+ 1м/с Скорость передвижения.-12% Максимальное здоровье +25% К замедлению от выстрелов',
+                'cost' => 7450,
                 'required_items' => null,
                 'tier_id' => 3,
                 'type_id' => 1,
 
-                'image' => 'items/glass_cannon.png',
+                'image' => 'items/glass_canon.png',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
@@ -677,7 +677,7 @@ class ItemsTableSeeder extends Seeder
                 'required_items' => null,
                 'tier_id' => 2,  // Tier II
                 'type_id' => 3,  // Spirit
-                'image' => 'items/spirit9.png',  // Обновлено
+                'image' => 'items/duration_extender.png',  // Обновлено
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
@@ -1197,7 +1197,7 @@ class ItemsTableSeeder extends Seeder
                 'tier_id' => 2,
                 'type_id' => 3,
 
-                'image' => 'items/withering_whip.png',
+                'image' => 'items/witchering_whip.png',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
@@ -1370,7 +1370,7 @@ class ItemsTableSeeder extends Seeder
                  'required_items' => null,
                 'tier_id' => 3,
                 'type_id' => 3,
-                'image' => 'items/magic_carpet.png',
+                'image' => 'items/carpet.png',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
