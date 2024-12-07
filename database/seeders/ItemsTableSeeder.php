@@ -584,7 +584,7 @@ class ItemsTableSeeder extends Seeder
                 'name' => 'Fortitude',
                 'description' => '+365 к Здоровью.Урон оружия: +27%.Скорость передвижения: +2 м/с.',
                 'cost' => 3000,
-                'required_items' => 22,
+                'required_items' => 41,
                 'tier_id' => 3,  // Tier IV
                 'type_id' => 2,  // Vitality
                 'image' => 'items/vitality5.png',  // Обновлено
@@ -597,7 +597,7 @@ class ItemsTableSeeder extends Seeder
                 'description' => '+45% Сопротивление от пуль.+10% Урон оружия.',
 
                 'cost' => 3000,
-                'required_items' => 24,
+                'required_items' => 43,
                 'tier_id' => 3,  // Tier IV
                 'type_id' => 2,  // Vitality
                 'image' => 'items/vitality4.png',  // Обновлено
@@ -1206,7 +1206,7 @@ class ItemsTableSeeder extends Seeder
                 'description' => '+100 Здоровье щита от дух. урона+8% Урон оружия.Умения наносят дополнительный урон, если нанесли хотя бы 200 урона за раз. Получив урон от этого предмета, цели будут невосприимчивы к нему следующие 5 сек.Дополнительный урон: 9%.',
 
                 'cost' => 3500,
-                'required_items'=>31,
+                'required_items'=>50,
                 'tier_id' => 3,
                 'type_id' => 3,
                 'image' => 'items/improved_burst.png',
@@ -1230,7 +1230,7 @@ class ItemsTableSeeder extends Seeder
                 'description' => '+30 Спиритической мощи. +3 Регенерация здоровья. +1 м/с Скорость бега. +100 Здоровье.',
 
                 'cost' => 3500,
-                'required_items'=>30,
+                'required_items'=>49,
                 'tier_id' => 3,
                 'type_id' => 3,
                 'image' => 'items/improved_spirit.png',
@@ -1278,7 +1278,7 @@ class ItemsTableSeeder extends Seeder
                 'description' => 'Увеличивает длительность ваших способностей и предметов. +33% Длительность улучшенной способности. +27% Длительность неулучшенных способностей. +175 Здоровье. +15% Урон оружия. +4 Восстановление здоровья',
 
                 'cost' => 4250,
-                'required_item'=>33,
+                'required_item'=>52,
                 'tier_id' => 3,
                 'type_id' => 3,
                 'image' => 'items/superior_duration.png',
