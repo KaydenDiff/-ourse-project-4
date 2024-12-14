@@ -55,7 +55,7 @@ class BuildController extends Controller
 
     public function getCharacterBuilds($id)
     {
-        $character = Character::with(['builds.items'])->find($id);
+        $character = Character::with(['builds.items', 'builds.user'])->find($id);
 
         if (!$character) {
             return response()->json(['Ошибка' => 'Персонаж не найден'], 404);
@@ -67,6 +67,7 @@ class BuildController extends Controller
                 return [
                     'id' => $build->id,
                     'name' => $build->name,
+                    'author' => $build->user->name,  // Добавляем имя пользователя (author)
                     'items' => $build->items->map(function ($item) {
                         return [
                             'part' => $item->pivot->part_id,
