@@ -17,8 +17,11 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/users', [UserController::class, 'index']); // Просмотр списка пользователей
     Route::post('/users/update', [UserController::class, 'update']); // Редактирование пользователя
     Route::delete('/users/{id}', [UserController::class, 'destroy']); // Удаление пользователя
+    Route::post('/users/update/{id}', [UserController::class, 'updateByAdmin']);
 });
-Route::get('/items', [ItemController::class, 'index']);// Получение списка всех предметов
+Route::get('/items', [ItemController::class, 'index'])
+    ->middleware('auth.custom');
+//Route::get('/items', [ItemController::class, 'index']);// Получение списка всех предметов
 Route::post('/items/create', [ItemController::class, 'store']);// Получение списка всех предметов
 Route::post('/items/{id}', [ItemController::class, 'update']); // Редактирование предмета
 Route::delete('/items/{id}', [ItemController::class, 'destroy']); // Удаление предмета

@@ -18,7 +18,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = ['name', 'login', 'password', 'api_token'];
+    protected $fillable = ['name', 'login', 'password', 'api_token','role'];
     public function generateToken()
     {
         $this->api_token = Str::random(60); // Генерируем случайный токен

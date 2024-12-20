@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 use Illuminate\Http\Request;
@@ -34,6 +35,17 @@ class Handler extends ExceptionHandler
      * @param  \Throwable  $exception
      * @return \Illuminate\Http\Response|\Symfony\Component\HttpFoundation\Response
      */
+    protected function unauthenticated($request, AuthenticationException $exception)
+    {
+        if ($request->expectsJson()) {
+            return response()->json(['message' => 'Необходимо пройти авторизацию.'], 401);
+        }
+
+        // Если вы все же хотите вернуться к маршруту 'login', то нужно убедиться, что он зарегистрирован в 'api.php'
+        // Однако редирект на API-методы может быть не лучшим вариантом. Вместо этого лучше оставить JSON ответ.
+        return response()->json(['message' => 'Необходимо пройти авторизацию.'], 401);
+    }
+
     public function render($request, Throwable $exception)
     {
         // Проверка на исключение ApiException
@@ -41,6 +53,19 @@ class Handler extends ExceptionHandler
             return $exception->getResponse();
         }
 
+        // Проверка на исключение AuthenticationException
+        if ($exception instanceof AuthenticationException) {
+            return response()->json([
+                'message' => 'Необходимо пройти авторизацию.',
+            ], 401);
+        }
+
+        // Проверка на исключение AccessDeniedHttpException
+        if ($exception instanceof AccessDeniedHttpException) {
+            return response()->json(['message' => 'Доступ запрещён.'], 403);
+        }
+
+        // Все остальные исключения обрабатываются стандартным способом
         return parent::render($request, $exception);
     }
 }
