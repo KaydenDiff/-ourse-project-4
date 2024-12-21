@@ -17,10 +17,7 @@ return new class extends Migration
             $table->string('role_name');
             $table->timestamps();
         });
-        DB::table('roles')->insert([
-            ['role_code' => 'user', 'role_name' => 'User'],
-            ['role_code' => 'admin', 'role_name' => 'Admin'],
-        ]);
+
     }
 
     /**

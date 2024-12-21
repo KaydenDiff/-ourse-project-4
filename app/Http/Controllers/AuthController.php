@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\ApiException;
 use App\Http\Requests\AuthLoginRequest;
 use App\Http\Requests\AuthRegisterRequest;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
@@ -33,13 +35,18 @@ class AuthController extends Controller
     {
         // Валидация выполняется автоматически через AuthLoginRequest
 
-        $user = User::where('login', $request->login)->first();
+        /*$user = User::where('login', $request->login)->first();
 
         if (!$user || !Hash::check($request->password, $user->password)) {
             throw ValidationException::withMessages([
                 'login' => ['Неверный логин или пароль.'],
             ]);
-        }
+        }*/
+        if (!Auth::attempt($request->only(['login', 'password'])))
+            throw new ApiException("Invalid credentials", 401);
+
+        $user = Auth::user();
+
 
         $token = $user->generateToken();
 

@@ -64,7 +64,7 @@ class CharacterController extends Controller
     {
         // Проверка, авторизован ли пользователь
         if (!auth('api')->check()) {
-            return response()->json(['Ошибка' => 'Пройдите авторизацию'], 401);
+            return response()->json(['Ошибка' => 'Пользователь не авторизован'], 401);
         }
 
         // Проверка, является ли пользователь администратором

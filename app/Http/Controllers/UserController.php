@@ -15,20 +15,20 @@ class UserController extends Controller
     {
         // Проверка, авторизован ли пользователь
         if (!auth('api')->check()) {
-            \Log::error('Не удалось авторизовать пользователя', ['request' => $request->all()]);
-            return response()->json(['Ошибка' => 'Пройдите авторизацию'], 401);
+
+            return response()->json(['Ошибка' => 'Пользователь не авторизован'], 401);
         }
 
         // Проверка, является ли пользователь администратором
         try {
             $user = auth('api')->user();
         } catch (\Exception $e) {
-            \Log::error('Ошибка при получении пользователя', ['error' => $e->getMessage()]);
+
             return response()->json(['Ошибка' => 'Не удалось получить информацию о пользователе', 'details' => $e->getMessage()], 500);
         }
 
         if ($user->role_id !== 2) {
-            \Log::warning('Недостаточно прав для пользователя', ['user_id' => $user->id]);
+
             return response()->json(['Ошибка' => 'Недостаточно прав'], 403);  // Код ошибки 403 (Forbidden) будет более подходящим для недостаточных прав
         }
 
@@ -57,7 +57,7 @@ class UserController extends Controller
 
         // Обновляем пароль, если передан
         if (isset($validated['password'])) {
-            $user->password = Hash::make($validated['password']);
+            $user->password = ($validated['password']);
         }
 
         // Сохраняем изменения
@@ -71,7 +71,7 @@ class UserController extends Controller
         $currentUser = auth()->user();
 
         // Проверяем, что текущий пользователь - администратор
-        if (!$currentUser || $currentUser->role !== 'admin') {
+        if (!$currentUser || $currentUser->role->id !== 2) {
             return response()->json(['Ошибка' => 'Доступ запрещен'], 403);
         }
 
@@ -91,7 +91,7 @@ class UserController extends Controller
 
         // Обновляем пароль, если передан
         if (isset($validated['password'])) {
-            $user->password = Hash::make($validated['password']);
+            $user->password = ($validated['password']);
         }
 
         // Сохраняем изменения
