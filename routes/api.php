@@ -26,9 +26,10 @@ Route::post('/items/create', [ItemController::class, 'store']);// Получен
 Route::post('/items/{id}', [ItemController::class, 'update']); // Редактирование предмета
 Route::delete('/items/{id}', [ItemController::class, 'destroy']); // Удаление предмета
 Route::get('/characters', [CharacterController::class, 'index']);// Получение списка всех персонажей
-Route::middleware('auth:api')->post('/characters/create', [CharacterController::class, 'store']);// Получение списка всех персонажей
+Route::middleware('auth:api')->group(function (){
+    Route::post('/characters/create', [CharacterController::class, 'store']);// Получение списка всех персонажей
 Route::post('/characters/{id}', [CharacterController::class, 'update']); // Редактирование персонажа
-Route::delete('/characters/{id}', [CharacterController::class, 'destroy']); // Удаление персонажа
+Route::delete('/characters/{id}', [CharacterController::class, 'destroy']);}); // Удаление персонажа
 Route::middleware('auth:api')->group(function () {
 Route::post('/builds/create', [BuildController::class, 'store']);
     Route::post('/builds/{id}', [BuildController::class, 'update']);

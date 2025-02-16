@@ -86,10 +86,12 @@ class BuildController extends Controller
 
         $build = Build::find($id);
 
-        if (!$build || $build->user_id != auth()->id()) {
+        if (!$build) {
             return response()->json(['Ошибка' => 'Сборка не найдена или доступ запрещён'], 404);
         }
-
+        if ($build->user_id != auth()->id() && auth()->user()->role_id !== 2) {
+            return response()->json(['Ошибка' => 'Доступ запрещён'], 403);
+        }
         // Обновляем только переданные поля
         if (isset($validatedData['name'])) {
             $build->name = $validatedData['name'];
